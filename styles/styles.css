@@ -184,7 +184,7 @@ aside {
   flex-direction: column;
   gap: 35px;
   padding: 1rem;
-  height: 80vh;
+  height: 110vh;
   overflow-y: scroll;
 }
 
@@ -213,7 +213,7 @@ aside {
     span {
       font-size: 0.875rem;
       :nth-child(2) {
-        font-weight: bolder;
+        font-weight: bold;
       }
     }
 
@@ -221,6 +221,29 @@ aside {
       display: flex;
       align-items: center;
       gap: 1rem;
+      margin-bottom: 1rem;
     }
+  }
+}
+
+button {
+  background-color: var(--active-bg-1);
+  height: 41px;
+  width: 220px;
+  border-radius: 41px;
+  border: none;
+}
+
+.lab-container {
+  width: 100%;
+  gap: 1rem;
+  max-height: 200px;
+  overflow-y: scroll;
+  img {
+    width: 20px;
+  }
+
+  div:hover {
+    background-color: #f6f7f8;
   }
 }

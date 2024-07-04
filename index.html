@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Health Care Dashboard</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <header>
+      <!-- navbrand -->
+      <div class="navbrand">
+        <img src="./assets/TestLogo.svg" alt="Test Logo" />
+      </div>
+      <nav class="nav-list" aria-label="Main Navigation">
+        <ul>
+          <li>
+            <a href="#">
+              <img class="navlink-icon" src="./assets/home.svg" alt="home" />
+              Overview</a
+            >
+          </li>
+          <li>
+            <a href="#">
+              <img
+                class="navlink-icon"
+                src="./assets/group.svg"
+                alt="patients"
+              />
+              Patients</a
+            >
+          </li>
+          <li>
+            <a href="#">
+              <img
+                class="navlink-icon"
+                src="./assets/calendar.svg"
+                alt="schedule"
+              />
+              Schedule</a
+            >
+          </li>
+          <li>
+            <a href="#">
+              <img
+                class="navlink-icon"
+                src="./assets/chat.svg"
+                alt="messages"
+              />
+              Message</a
+            >
+          </li>
+          <li>
+            <a href="#">
+              <img
+                class="navlink-icon"
+                src="./assets/credit_card.svg"
+                alt="transactions"
+              />
+              Transactions</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <!-- active account -->
+      <div class="active-account">
+        <img
+          class="avartar"
+          src="./assets/senior-woman.png"
+          alt="Senior woman doctor"
+        />
+        <div class="account-details">
+          <p>Dr. Jose Simmons</p>
+          <p>General Practitioner</p>
+        </div>
+        <div class="action">
+          <img class="settings" src="./assets/settings.png" alt="settings" />
+          <img src="./assets/more_vert.png" alt="more options" />
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="d-flex flex-row">
+        <!-- patients list -->
+        <aside class="col gap-1">
+          <div class="patients-header">
+            <h2>Patients</h2>
+            <img src="./assets/search.png" alt="search" />
+          </div>
+          <div class="patients-list my-4">
+            <div class="patient">
+              <div class="d-flex gap-4 patient-details">
+                <img class="avartar" src="./assets/senior-woman.png" />
+                <div>
+                  <p class="name">Martha Curtis</p>
+                  <span> Male, 45 </span>
+                </div>
+              </div>
+              <img class="more-btn" src="./assets/more_vert.png" />
+            </div>
+          </div>
+        </aside>
+        <div class="col-5 mx-5">2 of 3 (wider)</div>
+        <div class="col">3 of 3</div>
+      </div>
+    </main>
+  </body>
+  <script src="index.js"></script>
+</html>

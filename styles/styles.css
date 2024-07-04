@@ -24,8 +24,21 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scrollbar-color: #072635 #e3e4e6;
 }
 
+body::-webkit-scrollbar {
+  width: 12px;
+}
+
+body::-webkit-scrollbar-button {
+  display: none;
+}
+
+body::-webkit-scrollbar-track {
+  background: #e3e4e6;
+  border-radius: 10px;
+}
 /* header */
 header {
   display: flex;
@@ -164,4 +177,50 @@ aside {
   background-color: var(--item-background);
   padding: 20px;
   border-radius: 16px;
+}
+
+.patients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  padding: 1rem;
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+/* patients main */
+.pro-pic {
+  width: 12.5rem;
+}
+
+.pat-info {
+  aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  h2 {
+    font-size: 24px;
+    font-weight: bolder;
+  }
+  .patient-more-details {
+    img {
+      width: 2.65rem;
+    }
+
+    span {
+      font-size: 0.875rem;
+      :nth-child(2) {
+        font-weight: bolder;
+      }
+    }
+
+    > * {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
 }

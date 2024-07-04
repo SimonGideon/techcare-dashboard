@@ -10,6 +10,7 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
@@ -96,7 +97,9 @@
           </div>
           <div class="patients-list my-4"></div>
         </aside>
-        <div class="col-6 mx-4">2 of 3 (wider)</div>
+        <div class="col-6 mx-4">
+          <canvas class="chart-container"></canvas>
+        </div>
         <div class="col d-flex-col pat-info"></div>
       </div>
     </main>

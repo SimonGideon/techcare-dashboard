@@ -1,3 +1,5 @@
+import { chart } from "./chart.js";
+
 export const renderPatients = (data, container) => {
   data.forEach((patient) => {
     const { name, gender, age, profile_picture } = patient;
@@ -48,6 +50,7 @@ export const renderPatientDetails = (patientData, container) => {
     emergency_contact,
     insurance_type,
     lab_results,
+    diagnosis_history,
   } = patient;
 
   $(container).empty();
@@ -117,4 +120,9 @@ export const renderPatientDetails = (patientData, container) => {
   // Appending both sections to the main container
   $patientInfo.append($aside, $labResults);
   $(container).append($patientInfo);
+
+  const $chartEntry = $(".chart-container");
+
+  //   chart
+  chart(diagnosis_history, $chartEntry);
 };

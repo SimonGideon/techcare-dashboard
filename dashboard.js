@@ -1,4 +1,5 @@
 import { chart } from "./chart.js";
+import { renderTension } from "./tensionDiagnostic.js";
 
 export const renderPatients = (data, container) => {
   data.forEach((patient) => {
@@ -117,12 +118,12 @@ export const renderPatientDetails = (patientData, container) => {
   });
   $labResults.append($labsContainer);
 
-  // Appending both sections to the main container
   $patientInfo.append($aside, $labResults);
   $(container).append($patientInfo);
 
   const $chartEntry = $(".chart-container");
-
-  //   chart
   chart(diagnosis_history, $chartEntry);
+
+  const tensionEntry = ".tension-stats";
+  renderTension(diagnosis_history, tensionEntry);
 };

@@ -1,4 +1,5 @@
 import { legendCustomPlugin } from "./legend.js";
+
 export const chart = (data, container) => {
   const lastSixMonthsData = data.slice(-6);
   const labels = lastSixMonthsData.map((item) => `${item.month}, ${item.year}`);

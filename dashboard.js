@@ -1,5 +1,5 @@
 import { chart } from "./chart.js";
-import { renderTension } from "./tensionDiagnostic.js";
+import { renderTension, renderDiagnosticList } from "./tensionDiagnostic.js";
 
 export const renderPatients = (data, container) => {
   data.forEach((patient) => {
@@ -15,6 +15,9 @@ export const renderPatients = (data, container) => {
       .addClass("avatar")
       .attr("src", profile_picture)
       .attr("alt", `${name}'s profile picture`);
+    if (name === "Jessica Taylor") {
+      patientDiv.addClass("actiive-patient");
+    }
     patientDetailsDiv.append(avatar);
 
     const patientDetails = $("<div>");
@@ -52,13 +55,14 @@ export const renderPatientDetails = (patientData, container) => {
     insurance_type,
     lab_results,
     diagnosis_history,
+    diagnostic_list,
   } = patient;
 
   $(container).empty();
 
   const $patientInfo = $('<div class="col d-flex-col pat-info"></div>');
 
-  const $aside = $('<aside class="mb-5"></aside>');
+  const $aside = $('<aside class="mb-4"></aside>');
   $aside.append(`
       <img class="pro-pic" src="${profile_picture}" alt="patient-profile">
       <h2>${name}</h2>
@@ -124,6 +128,9 @@ export const renderPatientDetails = (patientData, container) => {
   const $chartEntry = $(".chart-container");
   chart(diagnosis_history, $chartEntry);
 
-  const tensionEntry = ".tension-stats";
+  const tensionEntry = $(".tension-stats");
   renderTension(diagnosis_history, tensionEntry);
+
+  const $diagnosticList = $(".diagnostic-list");
+  renderDiagnosticList(diagnostic_list, $diagnosticList);
 };

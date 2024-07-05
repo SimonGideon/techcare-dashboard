@@ -1,7 +1,6 @@
+// tension diagnostic cards
 export const renderTension = (tensionData, container) => {
   const containerElement = $(container);
-
-  // Clear any existing content in the container
   containerElement.empty();
   const presData = tensionData.slice(-1)[0];
 
@@ -36,4 +35,37 @@ export const renderTension = (tensionData, container) => {
   `);
 
   containerElement.append(tensionItem);
+};
+
+// diagnostic list table
+export const renderDiagnosticList = (diagnostic_list, container) => {
+  console.log("Diagnostic List:", diagnostic_list);
+
+  const containerElement = $(container);
+  containerElement.empty();
+
+  const table = $(`
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Status</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  `);
+  diagnostic_list.forEach((item) => {
+    const row = $(`
+      <tr>
+        <td>${item.name}</td>
+        <td>${item.description}</td>
+        <td>${item.status}</td>
+      </tr>
+    `);
+    table.find("tbody").append(row);
+  });
+  containerElement.append(table);
 };

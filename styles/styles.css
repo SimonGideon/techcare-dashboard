@@ -27,6 +27,17 @@ body {
   scrollbar-color: #072635 #e3e4e6;
 }
 
+.active-nav {
+  background-color: var(--active-bg-1);
+  border-radius: 41px;
+  padding: 0.6785rem 1rem;
+  font-weight: bold;
+}
+
+.actiive-patient {
+  background-color: var(--active-bg-2);
+}
+
 body::-webkit-scrollbar {
   width: 12px;
 }
@@ -46,7 +57,7 @@ header {
   align-items: center;
   padding: 0.75rem 2rem;
   margin: 18px;
-  font-size: 0.875rem;
+  font-size: 0.875em;
   color: var(--text-color);
   font-weight: bold;
   border-radius: 70px;
@@ -131,9 +142,10 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1.25rem;
 
   h2 {
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight: bolder;
   }
   img {
@@ -150,6 +162,7 @@ p {
 .patient {
   display: flex;
   justify-content: space-between;
+  padding: 0.5rem 1.25rem;
 
   .patient-details {
     img {
@@ -160,12 +173,12 @@ p {
 
   .name {
     font-weight: bold;
-    font-size: 0.875rem;
+    font-size: 0.875em;
   }
 
   span {
     font-weight: normal;
-    font-size: 14px;
+    font-size: 0.875em;
     color: var(--text-color-light);
   }
 }
@@ -182,7 +195,7 @@ aside,
   border-radius: 16px;
 
   h2 {
-    font-size: 22px;
+    font-size: 1.375em;
     font-weight: bolder;
     padding-bottom: 0.375rem;
   }
@@ -197,10 +210,7 @@ aside,
 .patients-list {
   display: flex;
   flex-direction: column;
-  gap: 35px;
-  padding: 1rem;
-  padding-left: 0;
-  height: 110vh;
+  height: 128vh;
   overflow-y: scroll;
 }
 
@@ -218,7 +228,7 @@ aside,
     gap: 1.5rem;
   }
   h2 {
-    font-size: 24px;
+    font-size: 1.5em;
     font-weight: bolder;
   }
   .patient-more-details {
@@ -227,7 +237,7 @@ aside,
     }
 
     span {
-      font-size: 0.875rem;
+      font-size: 0.875em;
       :nth-child(2) {
         font-weight: bold;
       }
@@ -311,17 +321,17 @@ button {
   border-radius: 12px;
 
   h5 {
-    font-size: 1rem;
+    font-size: 1em;
     font-weight: normal;
   }
 
   p {
-    font-size: 1.56rem;
+    font-size: 1.56em;
     font-weight: bolder;
   }
 
   .status {
-    font-size: 0.875rem;
+    font-size: 0.875em;
     font-weight: lighter;
   }
 }
@@ -332,10 +342,21 @@ button {
 
 /* diagnostic list  */
 .diagnostic-list {
+  font-size: 0.875em;
+
+  tbody {
+    font-weight: normal;
+    td {
+      padding-left: 1em;
+    }
+  }
+
   thead {
     th {
       background-color: #f6f7f8;
-      padding: 0.5rem 1rem;
+      padding: 0.875rem 1rem;
+      font-weight: bold;
+      border-style: none;
     }
 
     th:first-child {

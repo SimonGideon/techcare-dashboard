@@ -247,3 +247,10 @@ button {
     background-color: #f6f7f8;
   }
 }
+
+.legend-color {
+  display: flex;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+}

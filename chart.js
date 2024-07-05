@@ -13,7 +13,7 @@ export const chart = (data, container) => {
 
   $(document).ready(function () {
     const ctx = $(container);
-    new Chart(ctx, {
+    const myChart = new Chart(ctx, {
       type: "line",
       data: {
         labels: labels,
@@ -21,16 +21,18 @@ export const chart = (data, container) => {
           {
             label: "Systolic",
             data: systolicData,
-            borderColor: "rgba(255, 99, 132, 1)",
-            backgroundColor: "rgba(255, 99, 132, 0.2)",
-            yAxisID: "y-axis-1",
+            borderColor: "#E66FD2",
+            backgroundColor: "#E66FD2",
+            yAxisID: "y",
+            cubicInterpolationMode: "monotone",
           },
           {
             label: "Diastolic",
             data: diastolicData,
-            borderColor: "rgba(54, 162, 235, 1)",
-            backgroundColor: "rgba(54, 162, 235, 0.2)",
-            yAxisID: "y-axis-2",
+            borderColor: "#8C6FE6",
+            backgroundColor: "#8C6FE6",
+            yAxisID: "y",
+            cubicInterpolationMode: "monotone",
           },
         ],
       },
@@ -49,44 +51,76 @@ export const chart = (data, container) => {
               display: true,
               text: "Months",
             },
+            grid: {
+              drawBorder: false,
+              display: false,
+            },
           },
           y: {
             display: true,
-            title: {
-              display: true,
-              text: "Blood Pressure",
-            },
             position: "left",
-            grid: {
-              drawBorder: false,
-            },
-          },
-          "y-axis-1": {
-            type: "linear",
-            display: true,
-            position: "left",
-            title: {
-              display: true,
-              text: "Systolic",
-            },
-            grid: {
-              drawBorder: false,
-            },
-          },
-          "y-axis-2": {
-            type: "linear",
-            display: true,
-            position: "right",
-            title: {
-              display: true,
-              text: "Diastolic",
-            },
             grid: {
               drawBorder: false,
             },
           },
         },
+        elements: {
+          point: {
+            radius: 5,
+            hoverRadius: 7,
+          },
+        },
       },
+      plugins: [
+        {
+          beforeInit: function (chart) {
+            chart.generateLegend = () => {
+              const legendHTML = $('<div class="legend-details"></div>');
+
+              chart.data.datasets.forEach((dataset) => {
+                const { borderColor, label, data } = dataset;
+                const legendColor = borderColor;
+                const labelText = label;
+
+                let value;
+                let icon;
+                let iconLabel;
+                if (labelText === "Systolic") {
+                  value = Math.max(...data);
+                  icon = "ArrowUp.svg";
+                  iconLabel = "Higher than Average";
+                } else if (labelText === "Diastolic") {
+                  value = Math.min(...data);
+                  icon = "ArrowDown.svg";
+                  iconLabel = "Lower than Average";
+                }
+
+                const legendItem = $(`
+                  <div>
+                    <div class="d-flex gap-1">
+                      <span class="legend-color" style="background-color: ${legendColor};"></span>
+                      ${labelText}
+                    </div>
+                    ${value}
+                    <div class="d-flex gap-1">
+                      <img src="./assets/${icon}" alt="up" />
+                      <span>${iconLabel}</span> <!-- Replace with actual trend text -->
+                    </div>
+                  </div>
+                `);
+
+                legendHTML.append(legendItem);
+              });
+
+              return legendHTML;
+            };
+          },
+        },
+      ],
+    });
+    $(document).ready(function () {
+      const legendHTML = myChart.generateLegend().prop("outerHTML");
+      document.getElementById("chart-legends").innerHTML = legendHTML;
     });
   });
 };

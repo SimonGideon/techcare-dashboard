@@ -153,13 +153,14 @@ p {
 
   .patient-details {
     img {
-      width: 48px;
-      height: 48px;
+      width: 45px;
+      height: 45px;
     }
   }
 
   .name {
     font-weight: bold;
+    font-size: 0.875rem;
   }
 
   span {
@@ -173,10 +174,23 @@ main {
   margin: 32px 18px;
 }
 
-aside {
+aside,
+.stats-container {
   background-color: var(--item-background);
   padding: 20px;
   border-radius: 16px;
+
+  h2 {
+    font-size: 22px;
+    font-weight: bolder;
+    padding-bottom: 0.375rem;
+  }
+
+  .container {
+    background-color: var(--shade);
+    border-radius: 12px;
+    padding: 1rem;
+  }
 }
 
 .patients-list {
@@ -184,6 +198,7 @@ aside {
   flex-direction: column;
   gap: 35px;
   padding: 1rem;
+  padding-left: 0;
   height: 110vh;
   overflow-y: scroll;
 }
@@ -248,9 +263,41 @@ button {
   }
 }
 
+/* custom legend */
+.chart-legends {
+  font-size: 0.875em;
+}
+
 .legend-color {
   display: flex;
   width: 14px;
   height: 14px;
   border-radius: 50%;
+}
+
+.legend-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  p {
+    font-size: 1.375em;
+    font-weight: bold;
+  }
+
+  .caret {
+    img {
+      width: 10px;
+      height: 5px;
+    }
+    span {
+      font-size: 0.875em;
+      font-weight: lighter;
+    }
+  }
+}
+
+.legend-details > :first-child {
+  border-bottom: 2px solid #c6c8ca;
+  padding-bottom: 20px;
 }

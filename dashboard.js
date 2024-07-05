@@ -7,7 +7,7 @@ export const renderPatients = (data, container) => {
     const patientDiv = $("<div>").addClass("patient");
 
     const patientDetailsDiv = $("<div>").addClass(
-      "d-flex gap-4 patient-details"
+      "d-flex gap-2 patient-details"
     );
 
     const avatar = $("<img>")

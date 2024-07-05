@@ -97,33 +97,23 @@
           </div>
           <div class="patients-list my-4"></div>
         </aside>
-        <div class="col-6 mx-4">
-          <canvas class="chart-container"></canvas>
-          <div id="chart-legends"></div>
-          <!-- <div class="legend-details">
-            <div>
-              <div class="d-flex gap-1">
-                <span class="legends"></span>
-                Systolic
-              </div>
-              160
-              <div class="d-flex gap-1">
-                <img src="./assets/ArrowUp.svg" alt="up" />
-                <span>Higher than Average</span>
+        <div class="col-7 mx-4">
+          <div class="stats-container">
+            <h2>Diagnosis History</h2>
+            <div class="container">
+              <div class="row">
+                <div class="col-9 d-flex">
+                  <canvas class="col chart-container"></canvas>
+                </div>
+                <div class="col-3">
+                  <div id="chart-legends"></div>
+                </div>
               </div>
             </div>
-            <div>
-              <div class="d-flex gap-1">
-                <span class="legends"></span> Diastolic
-              </div>
-              78
-              <div class="d-flex gap-1">
-                <img src="./assets/ArrowDown.svg" alt="down" />
-                <span>Lower than Average</span>
-              </div>
-            </div>
-          </div> -->
+          </div>
+          <div class="tension-stats"></div>
         </div>
+
         <div class="col d-flex-col pat-info"></div>
       </div>
     </main>

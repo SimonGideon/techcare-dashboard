@@ -27,10 +27,10 @@ body {
   scrollbar-color: #072635 #e3e4e6;
 }
 
-.active-nav {
+.active-nav,
+.nav-list li:hover {
   background-color: var(--active-bg-1);
   border-radius: 41px;
-  padding: 0.6785rem 1rem;
   font-weight: bold;
 }
 
@@ -85,10 +85,11 @@ p {
     align-items: center;
     margin: 0;
     padding: 0;
-    gap: 1.5rem;
+    gap: 1rem;
 
     li {
       align-items: center;
+      padding: 0.6785rem 1rem;
     }
   }
 

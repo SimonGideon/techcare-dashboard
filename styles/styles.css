@@ -34,7 +34,8 @@ body {
   font-weight: bold;
 }
 
-.actiive-patient {
+.actiive-patient,
+.patient:hover {
   background-color: var(--active-bg-2);
 }
 
@@ -259,6 +260,11 @@ button {
   width: 220px;
   border-radius: 41px;
   border: none;
+}
+
+/* zoom in effect button on hover */
+button:hover {
+  transform: scale(1.1);
 }
 
 .lab-container {
